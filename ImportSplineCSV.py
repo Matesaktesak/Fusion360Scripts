@@ -54,7 +54,7 @@ def run(context):
                 data.clear()            
         if points.count:
             sketch = getTargetSketch(app, design, filename.split('/')[-1])
-            sketch.sketchCurves.sketchFittedSplines.add(points)
+            sketch.sketchCurves.sketchFittedSplines.add(points).isFixed = True
             ui.messageBox('Done: {points.count} points imported'.format(points=points), title)
         else:
             ui.messageBox('No valid points', title)            
